@@ -1,0 +1,28 @@
+- name: Install flatpak
+  hosts:
+    - all
+
+  tasks:
+    - name: flatpak is configured
+      import_role:
+        name: flatpak
+      vars:
+        # Flatpak method: user or system
+        flatpak_method: system
+
+        # Flatpacks repos
+        flatpak_repos:
+          - https://dl.flathub.org/repo/flathub.flatpakrepo
+
+        # Packages to install
+        flatpak_packages:
+          - io.neovim.nvim
+          - org.gnu.emacs
+          - com.visualstudio.code
+          - com.slack.Slack
+          - com.wps.Office
+          - com.skype.Client
+          - com.spotify.Client
+          - com.obsproject.Studio
+          - net.xmind.ZEN
+      tags: flatpak

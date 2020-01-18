@@ -1,0 +1,7 @@
+- name: Install
+  hosts:
+    - localhost
+  connection: local
+
+  roles:
+    - crivetimihai.docker
