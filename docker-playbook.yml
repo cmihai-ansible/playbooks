@@ -1,0 +1,16 @@
+---
+- name: Install docker on localhost
+  hosts: dev
+
+  tasks:
+    - name: docker is configured
+      import_role:
+        name: crivetimihai.docker
+      vars:
+        docker_remove_packages: true
+        docker_enable_service: true
+        docker_copy_templates: true
+        docker_users:
+          - user: devops
+            group: docker
+      tags: docker

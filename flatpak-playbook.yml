@@ -1,6 +1,6 @@
 - name: Install flatpak
   hosts:
-    - all
+    - dev
 
   tasks:
     - name: flatpak is configured

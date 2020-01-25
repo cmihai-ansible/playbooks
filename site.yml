@@ -1,7 +1,17 @@
-- name: Install
-  hosts:
-    - localhost
-  connection: local
+- name: Install development tools
+  hosts: dev
 
-  roles:
-    - crivetimihai.docker
+# Install python
+- import_playbook: bootstrap-playbook.yml
+
+# Setup our users
+- import_playbook: users-playbook.yml
+
+# Setup the dotfiles
+- import_playbook: dotfiles-playbook.yml
+
+# Install VS Code
+- import_playbook: vscode-playbook.yml
+
+# Install Docker
+- import_playbook: docker-playbook.yml

@@ -1,0 +1,10 @@
+---
+- name: bootstrap python
+  hosts: dev
+  gather_facts: false
+
+  tasks:
+    - name: bootstrap is configured
+      import_role:
+        name: crivetimihai.bootstrap
+      tags: bootstrap

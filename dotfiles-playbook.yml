@@ -1,0 +1,31 @@
+---
+- name: Install dotfiles on localhost
+  hosts: dev
+
+  tasks:
+    - name: dotfiles configured
+      import_role:
+        name: crivetimihai.dotfiles
+      vars:
+        dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
+        dotfiles_repo_version: HEAD
+        dotfiles_path: ~/.dotfiles
+        spacemacs_version: "v0.200.13"
+
+        dotfiles_user: ansible
+
+        # Link dotfiles
+        dotfiles_files:
+          - .tmux.conf.local
+          - .tmux.conf
+          - .zshrc
+
+        # Copy (and backup)
+        dotfiles_copy:
+          - .zshrc.local
+          - .gitconfig
+
+        # Sync (no backup)
+        dotfiles_sync:
+          - .config
+      tags: dotfiles

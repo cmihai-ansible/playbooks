@@ -1,12 +1,11 @@
 ---
 - name: Install vscode
-  hosts:
-    - all
+  hosts: dev
 
   tasks:
     - name: vscode is configured
       import_role:
-        name: vscode
+        name: crivetimihai.vscode
       vars:
         vscode_extensions_user: cmihai
         vscode_extensions_install:

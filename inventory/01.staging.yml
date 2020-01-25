@@ -1,0 +1,17 @@
+---
+all:
+  children:
+    centos:
+      hosts:
+        centos8: {}
+        centos7: {}
+    fedora:
+      hosts:
+        fedora31: {}
+    rhel:
+      hosts:
+        rhel81: {}
+    dev:
+      hosts:
+        rhel81: {}
+        fedora31: {}
